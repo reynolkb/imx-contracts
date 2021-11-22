@@ -80,7 +80,11 @@ library Bytes {
         for (uint256 i = 0; i < b.length; i++) {
             uint256 val = uint256(uint8(b[i]));
             if (val >= 48 && val <= 57) {
+                // input is 0-9
                 result = result * 10 + (val - 48);
+            } else {
+                // invalid character, expecting integer input
+                revert("invalid input, only numbers allowed")
             }
         }
         return result;
