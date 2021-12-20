@@ -21,7 +21,7 @@ In the test environment, deploying an ERC721 contract which is compatible with I
 - `ETHERSCAN_API_KEY`
   - which can be obtained from [your Etherscan account.](https://etherscan.io/myapikey)
 
-Then, just run `yarn run simple-deploy-ropsten`.
+Then, just run `yarn hardhat run deploy/asset.ts --network ropsten`.
 
 ### Basic Usage
 
@@ -71,18 +71,12 @@ contract YourContract is IMintable, Ownable {
 }
 ```
 
-### Deploying and verifying registration contract
+### Manually verifying registration contract
 
-Deploy to ropsten, change to dev/mainnet if required
-
-```
-yarn deploy-registration --network ropsten
-```
-
-If validation fails you can run it manually, eg
+Verification with Etherscan should happen automatically within a few minutes of contract deployment, but if it fails you can run it manually, eg
 
 ```
-yarn hardhat verify --network mainnet 0x72a06bf2a1CE5e39cBA06c0CAb824960B587d64c 0x5FDCCA53617f4d2b9134B29090C87D01058e27e9
+yarn hardhat verify --network <network> <address> <args used in deployment>
 ```
 
 ### Generating Typescript Types
