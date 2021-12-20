@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "compile": "npx hardhat compile",
-    "simple-deploy-ropsten": "npx hardhat run deploy/simple_asset.js --network ropsten",
+    "compile": "yarn hardhat compile",
+    "test": "yarn hardhat test",
+    "simple-deploy-ropsten": "yarn hardhat run deploy/simple_asset.js --network ropsten",
     "deploy-registration": "yarn hardhat run deploy/registration.ts"
   },
   "dependencies": {
@@ -18,6 +19,7 @@
     "@nomiclabs/hardhat-waffle": "^2.0.0",
     "@typechain/ethers-v5": "^7.0.1",
     "@typechain/hardhat": "^2.0.2",
+    "@types/mocha": "^9.0.0",
     "chai": "^4.2.0",
     "ethereum-waffle": "^3.0.0",
     "ethers": "^5.0.0",

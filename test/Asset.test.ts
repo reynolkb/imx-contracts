@@ -1,4 +1,6 @@
-const { expect } = require("chai");
+import { expect } from 'chai';
+import { ethers } from 'hardhat';
+import { Contract, Signer } from 'ethers';
 
 describe("Asset", function () {
 
@@ -72,7 +74,7 @@ describe("Asset", function () {
   });
 });
 
-function toHex(str) {
+function toHex(str: string) {
   let result = '';
   for (let i=0; i < str.length; i++) {
     result += str.charCodeAt(i).toString(16);
@@ -80,7 +82,7 @@ function toHex(str) {
   return '0x' + result;
 }
 
-function fromHex(str1) {
+function fromHex(str1: string) {
 	let hex = str1.toString().substr(2);
 	let str = '';
 	for (let n = 0; n < hex.length; n += 2) {
