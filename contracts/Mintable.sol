@@ -17,8 +17,8 @@ abstract contract Mintable is Ownable, IMintable {
         transferOwnership(_owner);
     }
 
-    modifier onlyIMX() {
-        require(msg.sender == imx, "Function can only be called by IMX");
+    modifier onlyOwnerOrIMX() {
+        require(msg.sender == imx || msg.sender == owner(), "Function can only be called by owner or IMX");
         _;
     }
 
@@ -26,7 +26,7 @@ abstract contract Mintable is Ownable, IMintable {
         address user,
         uint256 quantity,
         bytes calldata mintingBlob
-    ) external override onlyIMX {
+    ) external override onlyOwnerOrIMX {
         require(quantity == 1, "Mintable: invalid quantity");
         (uint256 id, bytes memory blueprint) = Minting.split(mintingBlob);
         _mintFor(user, id, blueprint);
