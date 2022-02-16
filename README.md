@@ -15,13 +15,14 @@ Immutable X is the only NFT scaling protocol that supports minting assets on L2,
 
 In the test environment, deploying an ERC721 contract which is compatible with Immutable X is extremely easy. First, update the `.env` file, setting:
 
-- `CONTRACT_OWNER_ADDRESS`
-- `CONTRACT_NAME`
-- `CONTRACT_SYMBOL`
-- `ETHERSCAN_API_KEY`
-  - which can be obtained from [your Etherscan account.](https://etherscan.io/myapikey)
+-   `CONTRACT_OWNER_ADDRESS`
+-   `CONTRACT_NAME`
+-   `CONTRACT_SYMBOL`
+-   `ETHERSCAN_API_KEY`
+    -   which can be obtained from [your Etherscan account.](https://etherscan.io/myapikey)
 
 Then, just run `yarn hardhat run deploy/asset.ts --network ropsten`.
+Ropsten Deployed Contract Address: `0x22748CF926C0C4169Cc4202AC8e68710D7262D1A`
 
 ### Basic Usage
 
