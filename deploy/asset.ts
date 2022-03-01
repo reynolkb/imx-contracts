@@ -16,7 +16,7 @@ async function main() {
 	const symbol = getEnv('CONTRACT_SYMBOL');
 	const baseURI = getEnv('BASE_URI');
 
-	const Asset = await ethers.getContractFactory('BitBirds2');
+	const Asset = await ethers.getContractFactory('Supernovas');
 	// const Asset = await ethers.getContractFactory('Asset');
 
 	// ropsten imx contract address: https://ropsten.etherscan.io/address/0x4527be8f31e2ebfbef4fcaddb5a17447b27d2aef

@@ -10,7 +10,7 @@ import "./Mintable.sol";
 
 /// @title A contract that mints NFT tokens
 /// @author kyle reynolds
-contract BitBirds2 is ERC721Enumerable, Ownable, Mintable {
+contract Supernovas is ERC721Enumerable, Ownable, Mintable {
     /// @notice storage variables
     /// @dev An uint256 can be easily converted into a string. ex: value.toString()
     using Strings for uint256;
@@ -92,14 +92,9 @@ contract BitBirds2 is ERC721Enumerable, Ownable, Mintable {
         baseExtension = _newBaseExtension;
     }
 
-    /// @notice get balance of contract
-    function getBalance() public view onlyOwner returns (uint256) {
-        return address(this).balance;
-    }
-
     /// @notice withdraw to owner
     /// @dev SWC-105 (Unprotected Ether Withdrawal)
     function withdraw() public payable onlyOwner {
-        payable(owner()).transfer(getBalance());
+        payable(owner()).transfer(address(this).balance);
     }
 }
