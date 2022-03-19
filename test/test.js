@@ -62,7 +62,7 @@ describe('SupernovasRopsten', function () {
 
 		await supernovasRopsten.mintFor(owner.address, 1, blob);
 
-		expect(await supernovasRopsten.tokenURI('1')).to.equal('https://supernovas.app/api/v0/imx/metadata/1');
+		expect(await supernovasRopsten.tokenURI('1')).to.equal(`${baseURI}1`);
 	});
 
 	// mint successfully with a valid blueprint. this happens when withdrawing from L2 to L1
