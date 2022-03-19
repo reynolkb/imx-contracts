@@ -8,9 +8,9 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "./Mintable.sol";
 
-/// @title A contract that mints NFT tokens
+/// @title Supernovas Immutable X test contract on Ropsten
 /// @author kyle reynolds
-contract Supernovas is ERC721Enumerable, Ownable, Mintable {
+contract SupernovasRopsten is ERC721Enumerable, Ownable, Mintable {
     /// @notice storage variables
     /// @dev An uint256 can be easily converted into a string. ex: value.toString()
     using Strings for uint256;
