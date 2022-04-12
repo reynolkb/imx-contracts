@@ -6,7 +6,7 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 const name = process.env.CONTRACT_NAME;
 const symbol = process.env.CONTRACT_SYMBOL;
-const imxAddress = process.env.IMX_ADDRESS;
+const imxAddress = process.env.ROPSTEN_IMX_ADDRESS;
 const baseURI = process.env.BASE_URI;
 
 describe('SupernovasRopsten', function () {
